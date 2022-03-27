@@ -1,0 +1,23 @@
+# This is an example of configuration file. Any relevant source file needs to be put under the same folder
+
+# Kind is associated to actions on the targets. For example, start represents starting services on the servers.
+kind: start      
+metadata:
+  # Owner is the author of this file
+  owner: CW
+  # Group is used to categorise the configuration file. It's easier for management
+  group: configuration
+  # Mode values could be read, write, execute. It controls different permission on the file.
+  mode: write                  
+spec:
+  servers:
+  # Name needs to be unique in the same configuration file. 
+  # Command section supports multiple commands 
+  - name: server1
+    address: 52.91.59.100
+    description: Web server to run php application
+    command: php index.php
+  - name: server2
+    address: 107.21.71.36
+    description: Web server to run php application
+    command: php index.php
